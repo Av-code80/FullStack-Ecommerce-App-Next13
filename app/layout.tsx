@@ -1,20 +1,19 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Inter } from "next/font/google";
 
 import { ModalProvider } from "@/providers/modal-provider";
+import { ToastProvider } from "@/providers/toast-provider";
 
 import "./globals.css";
-import prismadb from "@/lib/prismadb";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Admin Dashboard",
-  description: "Admin dashboard",
+export const metadata = {
+  title: "Dashboard",
+  description: "E-Commerce Dashboard",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -23,9 +22,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <ModalProvider  />
+          <ToastProvider />
+          <ModalProvider />
           {children}
-          </body>
+        </body>
       </html>
     </ClerkProvider>
   );
