@@ -12,7 +12,8 @@ export const ModalProvider = () => {
   }, []);
 
   if (!isMounted) {
-    return null; // by this there is no hydration error in SSC
+    // by this there is no hydration error in SSC
+    return null;
   }
 
   return (
@@ -20,4 +21,4 @@ export const ModalProvider = () => {
       <StoreModal />
     </>
   );
-}
+};
