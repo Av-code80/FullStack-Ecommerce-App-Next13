@@ -16,7 +16,6 @@ interface ModalProps {
   onClose: () => void;
   children?: React.ReactNode;
 }
-
 export const Modal: React.FC<ModalProps> = ({
   title,
   description,
