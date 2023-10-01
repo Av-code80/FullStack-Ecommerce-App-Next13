@@ -15,7 +15,6 @@ export const ModalProvider = () => {
     // by this there is no hydration error in SSC
     return null;
   }
-
   return (
     <>
       <StoreModal />
